@@ -12,7 +12,7 @@ class Track {
     }
 
     setReleaseDate(date){
-        this.releasedAt = date ? moment(date): date;
+        this.releasedAt = date ? new Date(date): date;
         return this;
     }
 

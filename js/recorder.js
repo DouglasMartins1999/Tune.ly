@@ -8,20 +8,24 @@ const rec_opt = {
     desiredSampRate: 14000
 }
 
-async function record(e){
+async function record(){
+    let timeout;
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
     const recorder = new RecordRTCPromisesHandler(stream, rec_opt);
-    
-    recorder.startRecording();
-    recording();
-
-    record_btn.onclick = async function(e){
+    const stop = async function(){
+        clearTimeout(timeout);
         record_btn.onclick = null;
         loading()
         
         await recorder.stopRecording();
         await recorder.getBlob().then(prepareQuery)
     };
+    
+    timeout = setTimeout(stop, 30000);
+    recorder.startRecording();
+    recording();
+
+    record_btn.onclick = stop; 
 }
 
 function recording(){
