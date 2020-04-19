@@ -9,15 +9,16 @@
 	<script src="./js/utils/jsSHA.js"></script>
 	<script src="./js/utils/RecordRTC.js"></script>
 </head>
-<body style="background-image: url('./images/main_bg.png');">
+<body>
 	<div class="overlay"></div>
 
 	<section class="main">
+		<a class="history-btn" href="./history.htm">Histórico</a>
 		<div class="recording"></div>
 		<button class="record">
 			<img src="./images/microphone.svg" class="action"/>
 		</button>
-		<a class="history-btn" href="./history.htm">Histórico</a>
+		<div class="rec-time bottom">00:00</div>
 	</section>
 
 	<script src="./js/utils/moment.js"></script>
@@ -26,5 +27,9 @@
 	<script src="./js/track.js"></script>
 	<script src="./js/recognize.js"></script>
 	<script src="./js/recorder.js"></script>
+	<script>
+		if(new URLSearchParams(location.search).get("widget"))
+		document.querySelector(".history-btn").style.display = "none";
+	</script>
 </body>
 </html>

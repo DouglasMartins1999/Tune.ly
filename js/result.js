@@ -25,7 +25,7 @@ async function getSpotifyTrack(id){
 function getDefaultTrack(){
     return new Track(undefined, "--", "N/A", "Não Encontrado")
         .setDuration(0)
-        .setCover("https://i.imgur.com/0klEYzO.png")
+        .setCover("../images/main_bg.png")
         .setReleaseDate("")
         .setPrecision("N/A")
         .setOffset("N/A")
