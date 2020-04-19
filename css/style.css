@@ -1,0 +1,189 @@
+@keyframes rec {
+	to {
+		transform: scale(1);
+		background: rgba(76, 90, 168, 1);
+	}
+	from {
+		transform: scale(2);
+		background: rgba(76, 90, 168, 0);
+	}
+}
+
+@keyframes act {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.05);
+	}
+}
+
+* {
+	color: #FFF;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	margin: 0px auto;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.bg-result {
+	background-image: url("../images/cover.png");
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to top, #262626, #9F9F9F);
+	mix-blend-mode: multiply;
+	z-index: -1;
+}
+
+.main,
+.result {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+.result {
+	justify-content: space-between;
+	padding: 12px 20px;
+}
+
+.main {
+	justify-content: center;
+}
+
+.score {
+	font-size: 10px;
+	background: #FFFFFF;
+	color: #4F4E4E;
+	border-radius: 8px;
+	height: 16px;
+	padding: 3px 6px;
+	box-sizing: border-box;
+	line-height: 1;
+	font-weight: 700;
+	mix-blend-mode: overlay;
+}
+
+.track {
+	width: 100%;
+	line-height: 1;
+}
+
+.track > div {
+	margin-left: 5px;
+}
+
+.duration {
+	mix-blend-mode: color-dodge;
+}
+
+.duration span {
+	font-size: 12px;
+	color: #686767;
+}
+
+.duration img {
+	width: 10px;
+	height: 10px;
+	margin-right: 3px;
+}
+
+.title {
+	font-size: 26px;
+	color: #FFF;
+	text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.4);
+	font-weight: 700;
+	line-height: 1.1;
+	margin-bottom: 6px;
+}
+
+.artist {
+	font-size: 14px;
+	font-weight: 300;
+	opacity: 0.7;
+}
+
+.continue {
+	width: 10px;
+}
+
+.record {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(to bottom, #EBEBEB, #646262);
+	border: 0;
+	border-radius: 50%;
+	box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.5);
+	transition: all 200ms ease;
+	z-index: 2;
+}
+
+.record.anim {
+	animation-name: act;
+	animation-duration: 500ms;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+.record:active {
+	transform: scale(1.05);
+}
+
+.recording {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+}
+
+.recording.anim {
+	animation-name: rec;
+	animation-duration: 1s;
+	animation-direction: reverse;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+}
+
+.action {
+	width: 44px;
+	height: 44px;
+}
+
+.history-btn {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 55px;
+	background: rgba(0, 0, 0, 0.3);
+	color: #8C94B9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}

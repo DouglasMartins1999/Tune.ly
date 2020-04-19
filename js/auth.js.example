@@ -1,0 +1,15 @@
+const auth = {
+    ACRCloud: {
+        access_key: 'YOUR ACCESS KEY',
+        access_secret: 'YOUR ACCESS SECRET'
+    },
+    spotify: {
+        clientID: "YOUR CLIENT ID",
+        secretID: "YOUR SECRET ID"
+    }
+}
+
+/* Please, refers to those links to get then
+    ACRCloud: https://docs.acrcloud.com/docs/acrcloud/tutorials/identify-music-by-sound/
+    Spotify: https://developer.spotify.com/dashboard/applications
+*/

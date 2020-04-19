@@ -1,0 +1,5 @@
+auth.js
+*.wgt
+.settings
+.sign
+.DS_Store

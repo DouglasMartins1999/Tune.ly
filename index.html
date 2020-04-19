@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tune.ly</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=200,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet"> 
+	<script src="./js/utils/jsSHA.js"></script>
+	<script src="./js/utils/RecordRTC.js"></script>
+</head>
+<body style="background-image: url('./images/main_bg.png');">
+	<div class="overlay"></div>
+
+	<section class="main">
+		<div class="recording"></div>
+		<button class="record">
+			<img src="./images/microphone.svg" class="action"/>
+		</button>
+		<a class="history-btn" href="./history.htm">Histórico</a>
+	</section>
+
+	<script src="./js/close.js"></script>
+	<script src="./js/auth.js"></script>
+	<script src="./js/recognize.js"></script>
+	<script src="./js/recorder.js"></script>
+</body>
+</html>
