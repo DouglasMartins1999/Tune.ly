@@ -28,10 +28,9 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	display: flex;
+	background-attachment: fixed;
 	width: 100%;
 	height: 100vh;
-	overflow: hidden;
 }
 
 .bg-result {
@@ -46,13 +45,14 @@ body {
 	height: 100%;
 	background-image: linear-gradient(to top, #262626, #9F9F9F);
 	mix-blend-mode: multiply;
+	-webkit-mix-blend-mode: multiply;
 	z-index: -1;
 }
 
 .main,
 .result {
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -61,7 +61,7 @@ body {
 
 .result {
 	justify-content: space-between;
-	padding: 12px 20px;
+	padding: 14px 20px;
 }
 
 .main {
@@ -106,7 +106,7 @@ body {
 }
 
 .title {
-	font-size: 26px;
+	font-size: 22px;
 	color: #FFF;
 	text-shadow: 1px 1px 7px rgba(0, 0, 0, 0.4);
 	font-weight: 700;
@@ -115,7 +115,7 @@ body {
 }
 
 .artist {
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 300;
 	opacity: 0.7;
 }
@@ -186,4 +186,90 @@ body {
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
+}
+
+.track-detail {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.track-detail .divisor {
+	background: #DDD;
+	height: 50px;
+	width: 1px;
+	mix-blend-mode: color-dodge;
+	margin-right: 14px;
+	top: 55px;
+	align-self: center;
+	position: sticky;
+}
+
+.track-detail section {
+	width: 100%;
+}
+
+.track-detail section label {
+	display: block;
+	font-size: 10px;
+	font-weight: 600;
+	color: #9F9F9F;
+	mix-blend-mode: luminosity;
+	text-transform: uppercase;
+}
+
+.track-detail section span {
+	display: block;
+	font-size: 18px;
+	font-weight: 200;
+	color: #FFFFFF;
+	line-height: 1.3;
+	margin-bottom: 12px;
+}
+
+aside {
+	top: 50px;
+	position: sticky;
+	align-self: center;
+}
+
+aside span {
+	display: block;
+	text-align: center;
+	font-weight: 800;
+	font-size: 12px;
+	color: #F2F0F0;
+	mix-blend-mode: color-dodge;
+}
+
+aside #day {
+	font-size: 22px;
+	font-weight: 300;
+	color: #DFDFDF;
+	line-height: 1.2;
+	mix-blend-mode: unset;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer a {
+	display: inherit;
+}
+
+footer img {
+	width: 24px;
+	height: 24px;
+}
+
+footer .divisor {
+	height: 3px;
+	width: 3px;
+	background: #DDDDDD;
+	border-radius: 50%;
+	mix-blend-mode: color-dodge;
+	margin: 0 8px;
 }

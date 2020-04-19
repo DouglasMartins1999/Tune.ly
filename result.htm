@@ -3,7 +3,7 @@
 <head>
 	<title>Tune.ly</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=220,user-scalable=no">
+	<meta name="viewport" content="width=200,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
 </head>
@@ -18,7 +18,36 @@
 			<div class="artist"></div>
 		</div>
 		<img src="./images/chevron-down.svg" class="continue"/>
-    </section>
+	</section>
+	<section class="result">
+		<article class="track-detail">
+			<section>
+				<div>
+					<label>Album</label>
+					<span id="album"></span>
+				</div>
+				<div>
+					<label>Gênero</label>
+					<span id="genre"></span>
+				</div>
+				<div>
+					<label>Encontrado aos</label>
+					<span id="offset"></span>
+				</div>
+			</section>
+			<div class="divisor"></div>
+			<aside>
+				<span id="day">23</span>
+				<span id="month">SET</span>
+				<span id="year">2019</span>
+			</aside>
+		</article>
+		<footer>
+			<a id="spotify"><img src="./images/spotify.svg"></a>
+			<div class="divisor"></div>
+			<img src="./images/play-button.svg">
+		</footer>
+	</section>
     
 	<script src="./js/utils/moment.js"></script>
 	<script src="./js/close.js"></script>

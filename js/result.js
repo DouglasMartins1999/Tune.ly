@@ -1,13 +1,19 @@
 function render(track = getDefaultTrack()){
-    const artist = document.querySelector(".artist");
-    const title = document.querySelector(".title");
-    const duration = document.querySelector(".duration span")
-    const bg = document.querySelector("body")
+    const release = moment(track.releasedAt)
+    document.querySelector(".artist").textContent = track.artist;
+    document.querySelector(".title").textContent = track.name;
+    document.querySelector(".duration span").textContent = moment(track.duration).format("mm:ss")
+    document.querySelector(".score").textContent = track.precision + "%";
+    document.querySelector("#album").textContent = track.album
+    document.querySelector("#genre").textContent = track.genre
+    document.querySelector("#offset").textContent = moment(track.offset).format("mm:ss")
+    document.querySelector("body").style.backgroundImage = `url('${track.cover}')`;
 
-    artist.textContent = track.artist;
-    title.textContent = track.name;
-    duration.textContent = moment(track.duration).format("mm:ss")
-    bg.style.backgroundImage = `url('${track.cover}')`
+    document.querySelector("#day").textContent = release.format("DD")
+    document.querySelector("#month").textContent = release.format("MMM").toUpperCase()
+    document.querySelector("#year").textContent = release.format("YYYY")
+
+    document.querySelector("#spotify").href = "spotify:track:" + track.id;
 }
 
 let urlTrack, spotifyTrack, isStored;
