@@ -51,14 +51,12 @@ function redirect(data = {}){
     const spotify = exmt && exmt.spotify && exmt.spotify.track && exmt.spotify.track.id
     const genre = data.genres && data.genres[0] && data.genres[0].name
     
-    window.location.href = "result.htm" + 
-        "?track=" + data.title +
-        "&artist=" + artist +
-        "&album=" + album +
-        "&duration=" + data.duration_ms +
-        "&release=" + data.release_date +
-        "&score=" + data.score +
-        "&spotify=" + spotify +
-        "&genre=" + genre +
-        "&offset=" + data.play_offset_ms;
+    const track = new Track(spotify, data.title, artist, album)
+        .setDuration(data.duration_ms)
+        .setReleaseDate(data.release_date)
+        .setPrecision(data.score)
+        .setGenre(genre)
+        .setOffset(data.play_offset_ms);
+
+    window.location.href = "result.htm?" + getSearchQuery(track, true);
 }

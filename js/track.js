@@ -7,7 +7,7 @@ class Track {
     }
 
     setDuration(time){
-        this.duration = time ? moment(parseInt(time)).format("mm:ss") : time;
+        this.duration = time ? parseInt(time) : time;
         return this;
     }
 
@@ -47,4 +47,28 @@ class Track {
         this.artist = artists.join(", ")
         return this;
     }
+}
+
+function getSearchQuery(track = new Track(), toStore = false){
+    const enc = encodeURIComponent;
+    const params = {
+        track: track.name,
+        artist: track.artist,
+        album: track.album,
+        duration: track.duration,
+        release: track.releasedAt,
+        score: track.precision,
+        spotify: track.id,
+        genre: track.genre,
+        offset: track.offset
+    }
+
+    if(toStore){
+        params.reg = true;
+    }
+
+    return Object.keys(params)
+        .filter(key => !!params[key])
+        .map(key => `${key}=${enc(params[key])}`)
+        .join("&")
 }
