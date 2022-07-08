@@ -4,6 +4,5 @@ document.addEventListener('tizenhwkey', (e) => {
         return tizen.application.getCurrentApplication().exit();
 
         window.history.back();
-        location.reload();
     }
 })

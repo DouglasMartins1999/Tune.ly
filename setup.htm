@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tune.ly</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=200,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/general.css"/>
+	<link rel="stylesheet" type="text/css" href="css/setup.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+    <script>
+        const auth = JSON.parse(localStorage.getItem("auth") || "[]");
+
+        if(auth instanceof Array && auth.length === 5) {
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body>
+    <label>Primeiro uso</label>
+	<h1>Configurar com suas credenciais</h1>
+    <p>Insira abaixo o link para o arquivo de configuração:</p>
+
+    <input type="url" id="link">
+    <button id="validate">Validar</button>
+
+	<script src="./js/utils/moment.js"></script>
+    <script src="./js/close.js"></script>
+    <script src="./js/setup.js"></script>
+</body>
+</html>

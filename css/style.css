@@ -23,6 +23,10 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
+html {
+	background: #000;
+}
+
 body {
 	margin: 0px auto;
 	background-image: url('../images/main_bg.png');

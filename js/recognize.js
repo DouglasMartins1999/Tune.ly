@@ -1,17 +1,17 @@
 function prepareQuery(blob){
     const timestamp = new Date().getTime() / 1000;
     const signer = new jsSHA("SHA-1", "TEXT", { encoding: "UTF8" });
-    const { access_secret, access_key } = auth.ACRCloud;
+    const { access_secret, access_key, host } = auth.ACRCloud;
     const stringToSign = ["POST", '/v1/identify', access_key, "audio", "1", timestamp].join('\n');
     
     signer.setHMACKey(access_secret, "TEXT");
     signer.update(stringToSign)
 
-    identifyTrack(blob, timestamp, signer, access_key)
+    identifyTrack(blob, timestamp, signer, access_key, host)
 }
 
-function identifyTrack(blob, timestamp, signer, access_key){
-    const url = "http://identify-eu-west-1.acrcloud.com/v1/identify";
+function identifyTrack(blob, timestamp, signer, access_key, host){
+    const url = host + "/v1/identify";
     const signature = signer.getHMAC("B64");
     const formdata = new FormData();
     const options = { method: 'POST', body: formdata }
@@ -58,5 +58,6 @@ function redirect(data = {}){
         .setGenre(genre)
         .setOffset(data.play_offset_ms);
 
+    restore();
     window.location.href = "result.htm?" + getSearchQuery(track, true);
 }

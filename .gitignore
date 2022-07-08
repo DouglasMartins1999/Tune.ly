@@ -1,5 +1,7 @@
-auth.js
+*.tmp
 *.wgt
 .settings
 .sign
 .DS_Store
+author-signature.xml
+signature*.xml
